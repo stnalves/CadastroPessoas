@@ -25,7 +25,11 @@ CadastroPessoas/
 
 ├── arquivo.py # Leitura e escrita no arquivo
 
+├── mensagens.py # Exibição de mensagens formatadas (títulos, erros etc.).
+
 └── dados.txt # Arquivo onde os cadastros são armazenados
+
+
 
 ## 💡 Exemplos de uso
 
