@@ -2,11 +2,14 @@ from mensagens import *
 
 def nome():
     while True:
-        n = str(input('Nome: ')).strip().title()
-        if all(palavra.isalpha() for palavra in n.split()):
-            return n
-        else:
-            erro('ERRO AO CADASTRAR O NOME')
+        try:
+            n = str(input('Nome: ')).strip().title()
+            if n and all(palavra.isalpha() for palavra in n.split()):
+                return n
+            else:
+                erro('ERRO AO CADASTRAR O NOME')
+        except KeyboardInterrupt:
+            erro('\nEntrada de nome cancelada pelo usuário')
             
 def idade():
     while True:
@@ -16,5 +19,5 @@ def idade():
         except (ValueError, TypeError):
             erro('ERRO! Por favor, digite uma idade válida.')
         except KeyboardInterrupt:
-            erro('Entrada de idade cancelada pelo usuário.')
-            return 0
+            erro('\nEntrada de idade cancelada pelo usuário.')
+            return None
